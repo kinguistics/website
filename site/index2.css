@@ -1,0 +1,276 @@
+/* body style, inherited by everything within <body> ... </body> in the html */
+body {
+	/* background color, font */
+	background: #E7D19A;
+	font: normal medium Arial, Helvetica, sans-serif;
+	
+	/* this determines the vertical line size (eg for when you use </br>) */
+	line-height: 1.4em;
+	
+	/* font color is black */
+	color: #000000;
+	padding: 10px;
+}
+
+/* h# tags are headers; <h1>...</h1> is the biggest, <h6>...</h6> the smallest */
+h1, h2, h3, h4, h5, h6 {
+	/* no margins for headers (for defaults see http://www.w3.org/TR/CSS2/sample.html) */
+	margin: 0;
+	
+	/* font type, boldness, color (blue) */
+	font-family: normal small Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #3f3c30;
+}
+
+/* <a>...</a> tag is for links */
+a {
+	/* links are gray */
+	color: #1E1E1E;
+}
+
+/* this defines what happens when you hover your cursor over a link */
+a:hover {
+	/* remove text decoration (eg, underline) */
+	text-decoration: none;
+	
+}
+
+
+/* NOTE: when something is defined like 
+	#NAME {
+		...
+	}
+	this defines the style inside for anything in the html that has
+		the id NAME, eg <div id="NAME">...</div>
+*/
+
+/* style definitions for the header (the title & device picture) */
+#header {
+	/* width, height */
+    width: 1197px;
+    height: 197px;
+    
+    /* this is necessary for centering but I don't understand why */
+    margin: auto;
+    padding:0;
+    border-left: 3px solid #990000;
+    border-top: 3px solid #990000;
+    border-right: 3px solid #990000;
+
+    /* our background picture */
+	background: url(images/river_small3.jpg);
+	
+	/* opacity (0 is transparent). I changed this from 0.7 to make the header look less washed-out */
+	opacity: 1;
+	
+	vertical-align: center;
+}
+
+/* style for <h1>...</h1> within <div id="header">; currently says "THE PHONOLOGY LABORATORY" */
+#header h1 {
+	/* pad it to the position we want it at */
+	padding: 25px 0 0 20px;
+	
+	/* make the font pretty big, and in small caps */
+	font-size: 3em;
+	line-height: 1.0em;
+	font-variant: small-caps;
+	display: block;
+	height: 197px;
+	/*background: #FFFFFF;*/
+	
+	
+	/* font color is white */
+	color: #990000;
+}
+
+#textheader {
+	float: left;
+	/*border: 1px solid black;*/
+	text-align: center;
+	
+	
+	margin: auto;
+}
+
+#imgheader {
+	width:961px;
+	height:197px;
+	float:right;
+	/*background: url(images/river_small.jpg);*/
+}
+
+/* style definitions for the menu */
+#menu {
+	/* width and height */
+	width: 1200px;
+	height: 39px;
+	
+    /* this is necessary for centering but I don't understand why 
+	margin: 0 auto 0 auto;*/
+	margin: auto;
+	padding: 0;
+	
+	/* font size is medium */
+	font-size: 115%;
+	
+	/* changed the opacity from 0.8 */
+	opacity: 1;
+	
+	/* border around the whole menu */
+	border-left: 3px solid #990000;
+	border-top: 3px solid #990000;
+
+	
+}
+
+/* <ul> is unnumbered list; this is for ul within <div id="menu">...</div> */
+#menu ul {
+	/* the default padding is something larger than 0, which messes up the menu */
+	padding: 0;
+	margin: 0;
+	border: 0;
+
+	/* suppress bullet points */
+	list-style: none;
+}
+
+/* <li>...</li> goes within <ul>...</ul> and means list item */
+#menu li {
+	/* have the list items display next to each other (instead of vertically) */
+	display: inline;
+}
+
+/* this is for links within the menu */
+#menu a {
+	/* small caps */
+	font-variant: small-caps;
+	
+	padding: 0;
+	
+	/* make it so you can click anywhere in the link box (instead of just on the text) */
+	display: block;
+	
+	/* the width of each link box */
+	width: 237px;
+	
+	/* this is necessary to get the links to be next to each other */
+	float: left;
+	
+	/* the height of each link box */
+	height: 36px;
+	
+	/* alignment of text within each box */
+	text-align: center;
+	
+	/* transparent margin around the link box 
+	margin: 3px;*/
+	
+	/* border around the link boxes */
+	border-right: 3px solid #990000;
+	border-bottom: 3px solid #990000;
+
+	
+	/* suppress underlining of links */
+	text-decoration: none;
+	
+	/* font boldness, line height, colors, etc. */
+	font-weight: bold;
+	line-height: 1.8em;
+	font-size: 1.2em;
+	background-color: #FFFFFF;
+	color: #3f3c30;
+}
+
+/* this section is for what happens when you hover your cursor over links in the menu */
+#menu a:hover {
+	/* turn the background dark gray */
+	background: #999999;
+}
+
+/* Content */
+/* this section is for the entire white box around all of the content of the page */
+#content {
+	width: 1197px;
+	
+	/* necessary for centering */
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	font-size: 1.1em;
+	
+	border: 3px solid #990000;
+	
+	/* background is white */
+	background: #FFFFFF;
+}
+
+/* the "title" defines style for <div class="title"> within <div id="content">
+	this is the picture */
+#content .title {
+	/* align it to the right */
+	float: right;
+	
+	width: 45%;
+	text-align: left;
+	line-height: 1.2em;
+	font-size: 1.4em;
+
+}
+
+/* Posts */
+/* this section is for the left column, containing "THE LAB" and "RECENT NEWS" */
+#posts {
+	/* put this column on the left */
+	float: left;
+	text-align: left;
+	width: 40%;
+	font-size: 90%;
+	
+	/* both top/bottom and left/right padding is 40px */
+	padding: 40px 40px;
+}
+
+/* #posts .meta is for the "Posted on x by y" line under each RECENT NEWS item */
+#posts .meta {
+	/* pad the left to indent it a bit */
+	padding: 0 0 0 20px;
+	line-height: normal;
+	font-size: smaller;
+}
+
+
+/* Links */
+/* this section defines the style for the LINKS section (in <div id="links>) */
+#links {
+	/* align the links div to the right */
+	float: right;
+	text-align:left;
+	width: 43%;
+	font-size: 90%;
+	
+	/* pad 20px on all sides */
+	padding: 20px;
+}
+
+#links ul {
+	/* force padding to be 0 (less than the default) */
+	padding: 0px;
+	
+	/* no buller points */
+	list-style: none;
+}
+
+#links li {
+	/* put a little space between each list item */
+	padding: 3px 0;
+}
+
+/* Footer */
+/* the very bottom part: Copyright ... Design by ... */
+#footer {
+	text-align: center;
+	font-size: x-small;
+	color: #1E1E1E;
+}
