@@ -56,7 +56,8 @@ h1,h2,h3,h4,h5,h6 {
 
 /* the main portion of the page */
 #content {
-	margin: auto;
+	/*margin: auto;*/
+	padding-right: 20px;
 	border-top: 3px solid #900000;
 	border-right: 3px solid #900000;
 }
