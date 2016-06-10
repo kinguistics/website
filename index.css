@@ -1,72 +1,62 @@
 body {
 	background: #FFFFFF;
-	font: normal medium Verdana, Arial, sans-serif;
 
+	font: normal medium Verdana, Arial, sans-serif;
 	color: #000000;
+
+	/* can't just do a single margin because that makes margin-top = 0 */
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* the whole header, including picture and banner */
-#header {
-	width: 800px;
-	height: 201px;
-
-	margin: auto;
-	/*border: 1px solid black;*/
+header {
+	height: 200px;
 }
 
 /* the left part of the header -- for the picture */
 #headerleft {
 	float: left;
-    width: 180px;
-
-	/*margin-top: 3px;
-	margin-right: 3px;*/
-
+  width: 22.5%;
 }
 
 /* the right part of the header -- my name and contact */
 #headerright {
 	float: right;
-	width: 600px;
-	height: 198px;
+	width: 75%;
+	height: 200px;
 	border-top: 3px solid #900000;
 	border-right: 3px solid #900000;
 }
 
+/* force the margins for h */
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
 /* name */
-#header h1 {
-	padding: 0% 0% 0% 10%;
-	line-height: 1.0em;
+#my-name {
 	color: #01835F;
-	text-align: left;
-	}
+}
 
 /* "PhD student..." */
-#header h3 {
-	padding: 0% 0% 0% 10%;
-	line-height: 1.0em;
+#my-description {
 	color: #BF6900;
 }
 
-/* email address and office */
-#headerrightpleft {
-	float: left;
-	padding: 0% 5% 0% 10%;
-	width: 35%;
+/* contact info */
+#personalinfo {
+	margin-left: 10%;
 }
 
-/* Department address */
-#headerrightpright {
-	float: right;
-	padding: 0% 5% 0% 5%;
+#contact td {
 	width: 35%;
 }
 
 /* the main portion of the page */
 #content {
 	margin: auto;
-	width: 800px;
-	/*height: 198px;*/
 	border-top: 3px solid #900000;
 	border-right: 3px solid #900000;
 }
