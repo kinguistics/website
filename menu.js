@@ -1,7 +1,11 @@
 MENU_HTML_FILENAME = "menu.txt";
 BUTTON_SEPARATION_PX = 10;
 
-function loadMenu() {
+function loadMenu(activeLink) {
+  if (activeLink != ".") {
+    activeLink = activeLink + ".html"
+  }
+
   $.get(MENU_HTML_FILENAME)
     .success(function(data) {
       var lines = data.split("\n");
@@ -30,12 +34,19 @@ function loadMenu() {
         text = vals[0];
         href = vals[1];
 
+        line_a = $('<a></a>')
+                  .attr("href",href)
+                  .text(text);
+        console.log(href);
+        console.log(activeLink);
+        if (href == activeLink) {
+          line_a.addClass("active");
+        }
+
         line_div = $('<div></div>')
                     .addClass('menu-button')
                     .width(button_width)
-                    .append($('<a></a>')
-                             .attr("href",href)
-                             .text(text));
+                    .append(line_a);
         console.log(line_div);
         if (i != 0) {
           line_div.css("margin-left",BUTTON_SEPARATION_PX.toString()+"px");
