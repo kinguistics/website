@@ -17,9 +17,10 @@ function loadMenu(activeLink) {
         }
       }
 
-      menu_width = $("#menu").width();
+      menu_width = $("#body").width();
 
       // minus 3 because that's the size of the border
+      //button_width = Math.floor(menu_width / (nButtons)) - 3;
       button_width = Math.floor(menu_width / (nButtons)) - 3;
 
       //shrink according to number of buttons
