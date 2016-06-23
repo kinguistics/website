@@ -54,10 +54,29 @@ h1,h2,h3,h4,h5,h6 {
 	width: 35%;
 }
 
-/* the main portion of the page */
-#content {
-	/*margin: auto;*/
-	padding-right: 20px;
+#menu {
+	margin-top: 10px;
+	/*margin-bottom: 50px;*/
+}
+
+#menu a {
+	font-size: 1.25em;
+	text-decoration: none;
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #000000;
+}
+
+.menu-button {
+	float: left;
+	text-align: center;
+	border-bottom: 3px solid #900000;
+	border-left: 3px solid #900000;
+}
+
+#body {
+	float: clear;
 	border-top: 3px solid #900000;
 	border-right: 3px solid #900000;
 }

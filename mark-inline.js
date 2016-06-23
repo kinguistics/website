@@ -825,7 +825,7 @@
     return this || (typeof window !== "undefined" ? window : global)
 }());
 
-/* code cribbed from Strapdown.js (https://github.com/arturadib/strapdown) */
+/* code mostly cribbed from Strapdown.js (https://github.com/arturadib/strapdown) */
 ;(function(window, document) {
 
   // Hide body until we're done fiddling with the DOM
@@ -833,52 +833,28 @@
 
   //////////////////////////////////////////////////////////////////////
   //
-  // Shims for IE < 9
-  //
-
-  document.head = document.getElementsByTagName('head')[0];
-
-  if (!('getElementsByClassName' in document)) {
-    document.getElementsByClassName = function(name) {
-      function getElementsByClassName(node, classname) {
-        var a = [];
-        var re = new RegExp('(^| )'+classname+'( |$)');
-        var els = node.getElementsByTagName("*");
-        for(var i=0,j=els.length; i<j; i++)
-            if(re.test(els[i].className))a.push(els[i]);
-        return a;
-      }
-      return getElementsByClassName(document.body, name);
-    }
-  }
-
-  //////////////////////////////////////////////////////////////////////
-  //
   // Get user elements we need
   //
+  // EK 6/22/16: loop over so we can put in multiples
 
-  var markdownEl = document.getElementsByTagName('xmp')[0];
+  var allMarkdownEl = document.getElementsByTagName('xmp');
 
-  //////////////////////////////////////////////////////////////////////
-  //
-  // <body> stuff
-  //
+  // since this replaces, we treat it like a pop()
+  for (i=0; i < allMarkdownEl.length; i) {
+    markdownEl = allMarkdownEl[i];
+    var markdown = markdownEl.textContent || markdownEl.innerText;
 
-  var markdown = markdownEl.textContent || markdownEl.innerText;
+    // Generate Markdown
+    var html = marked(markdown, {breaks: true});
 
-  var newNode = document.createElement('div');
-  newNode.className = 'container';
-  newNode.id = 'content';
-  document.body.replaceChild(newNode, markdownEl);
+    // wrap the markdown in a div
+    var newDiv = document.createElement("div");
+    newDiv.innerHTML = html
 
-  //////////////////////////////////////////////////////////////////////
-  //
-  // Markdown!
-  //
+    // replace this xmp child with the new div
+    markdownEl.parentNode.replaceChild(newDiv, markdownEl);
+  }
 
-  // Generate Markdown
-  var html = marked(markdown, {breaks: true});
-  document.getElementById('content').innerHTML = html;
 
   // All done - show body
   document.body.style.display = '';

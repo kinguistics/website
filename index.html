@@ -2,7 +2,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns="http://www.w3.org/1999/xhtml">
 
 <!-- let's play with some jQuery -->
-<script src="jquery.js"></script>
+<!--<script src="jquery.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<!-- externalize the code for the menu -->
+<script src="menu.js"></script>
 
 <!-- GA code -->
 <script src="etk-ga.js"></script>
@@ -10,7 +14,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="description" content="Ed King, PhD candidate at Stanford Linguistics">
-	<meta name="keywords" content="linguistics,phonetics,psycholinguistics,gender,natural language processing,Stanford">
+	<meta name="keywords" content="linguistics,phonetics,psycholinguistics,gender,natural language processing,human computer interaction,Stanford">
 	<meta name="author" content="Ed King">
 
 	<title>Ed King</title>
@@ -35,7 +39,7 @@
 					<td>
 						etking@stanford.edu<br/>
 						office: 460-006<br/>
-						<a href="king-cv-web.2015">CV</a> (pdf)
+						<a href="king-cv-web.pdf">CV</a> (pdf)
 					</td>
 					<td>
 						Department of Linguistics<br/>
@@ -47,11 +51,18 @@
 		</div>
 	</div>
 </header>
-<!-- end header -->
 
 <br/>
 
-<xmp id="content">
+<div id="body">
+	<div id="menu">
+		<script>loadMenu()</script>
+	</div>
+
+	<br/><br/><br/>
+
+	<div id="content">
+		<xmp>
 psycholinguistics
 computational modeling
 language and gender
@@ -59,9 +70,14 @@ language and gender
 creator of [Talk Obama To Me](http://talkobamato.me), a web-based video speech synthesizer of President Obama
 
 tweeting about language, gender, and data at [@poptimality](https://twitter.com/poptimality)
-</xmp>
+		</xmp>
+
+	</div>
+</div>
+
+</body>
 
 <!-- cute little js to render simple text directly from markdown -->
 <script src="mark-inline.js"></script>
-</body>
+
 </html>
