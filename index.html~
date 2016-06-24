@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- let's play with some jQuery -->
+<!--<script src="jquery.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<!-- externalize the code for the menu -->
+<script src="menu.js"></script>
+
+<!-- GA code -->
+<script src="etk-ga.js"></script>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="Ed King, PhD candidate at Stanford Linguistics">
+	<meta name="keywords" content="linguistics,phonetics,psycholinguistics,gender,natural language processing,human computer interaction,Stanford">
+	<meta name="author" content="Ed King">
+
+	<title>Ed King</title>
+
+	<link href="index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<header>
+	<!-- picture side of header -->
+	<div id="headerleft">
+		<a href="."><img src="etking.png" style=" width : 100%; height : auto"></a>
+	</div>
+
+	<!-- name/contact side of header -->
+	<div id="headerright">
+		<div id="personalinfo">
+			<h1 id="my-name" class="header-info"><a href=".">Ed King</a></h1>
+			<h3 id="my-description" class="header-info">PhD candidate, <a href="https://linguistics.stanford.edu/">Stanford Linguistics</a></h3>
+			<table id="contact">
+				<tr>
+					<td>
+						etking@stanford.edu<br/>
+						office: 460-006<br/>
+<<<<<<< HEAD
+						<a href="king-cv-web.pdf">CV</a> (pdf)
+=======
+						<a href="king-cv-web.pdf" style="text-decoration: underline; color: #01835F">CV</a> (pdf)
+>>>>>>> 42dc623d063d5b872e78f4e4014a014b0d0d4754
+					</td>
+					<td>
+						Department of Linguistics<br/>
+						Bldg 460, Rm 124<br/>
+						Stanford, CA 94305
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</header>
+
+<br/>
+
+<div id="body">
+	<div id="menu">
+		<script>loadMenu(".")</script>
+	</div>
+
+	<br/><br/><br/>
+
+	<div id="content">
+		<xmp>
+<!--### overview-->
+psycholinguistics
+computational modeling
+language and gender
+
+creator of [Talk Obama To Me](http://talkobamato.me), a web-based video speech synthesizer of President Obama
+
+tweeting about language, gender, and data at [@poptimality](https://twitter.com/poptimality)
+		</xmp>
+
+	</div>
+</div>
+
+</body>
+
+<!-- cute little js to render simple text directly from markdown -->
+<script src="mark-inline.js"></script>
+
+</html>

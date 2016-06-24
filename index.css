@@ -4,10 +4,29 @@ body {
 	font: normal medium Verdana, Arial, sans-serif;
 	color: #000000;
 
-	/* can't just do a single margin because that makes margin-top = 0 */
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+/* don't be so wide */
+hr {
+	width: 95%;
+}
+
+/* force the margins for h */
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/* all not-otherwise specified links should be green, and always underlined */
+a {
+	color: #01835F;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: underline;
 }
 
 /* the whole header, including picture and banner */
@@ -30,11 +49,6 @@ header {
 	border-right: 3px solid #900000;
 }
 
-/* force the margins for h */
-h1,h2,h3,h4,h5,h6 {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
 /* name */
 #my-name {
 	color: #01835F;
@@ -45,19 +59,62 @@ h1,h2,h3,h4,h5,h6 {
 	color: #BF6900;
 }
 
+/* links in the name / description exist, but shouldn't stand out */
+.header-info a {
+	text-decoration: none;
+	color: inherit;
+}
+.header-info a:hover {
+	text-decoration: underline;
+}
+
 /* contact info */
 #personalinfo {
 	margin-left: 10%;
 }
-
 #contact td {
 	width: 35%;
 }
 
-/* the main portion of the page */
-#content {
-	/*margin: auto;*/
-	padding-right: 20px;
+/* intra-site navigation, generated from menu.txt by menu.js */
+#menu {
+	margin-top: 10px;
+	/*margin-bottom: 50px;*/
+}
+
+/* specific styles for menu buttons and links */
+#menu a {
+	font-size: 1.25em;
+	text-decoration: none;
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #000000;
+}
+#menu a.active {
+	color: rgba(191,105,0, 1);
+}
+#menu a:hover {
+	text-decoration: underline;
+}
+.menu-button {
+	float: left;
+	text-align: center;
+	border-bottom: 3px solid #900000;
+	border-left: 3px solid #900000;
+}
+
+#body {
+	float: clear;
 	border-top: 3px solid #900000;
 	border-right: 3px solid #900000;
+
+	/* push the right border a little bit past the text */
+	padding-bottom: 10px;
+}
+
+#content {
+	/* give the actual content a bit of a right margin;
+		 this also helps hr to not be so wide */
+	padding-right: 20px;
 }
